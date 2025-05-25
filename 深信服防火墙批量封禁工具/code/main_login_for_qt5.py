@@ -277,7 +277,7 @@ class IPBlockerApp(QMainWindow):
         menubar = self.menuBar()
        
         # 顶部菜单
-        file_menu = menubar.addMenu('文件')
+        # file_menu = menubar.addMenu('文件')
         # file_menu.addAction(self.new_action)
         # file_menu.addAction(self.open_action)
         # file_menu.addAction(self.save_action)
@@ -579,7 +579,7 @@ class IPBlockerApp(QMainWindow):
                         error_msg = f"IP组创建失败（批次{batch_num+1}）:\n{create_resp.text if create_resp else '无响应'}"
                         QMessageBox.critical(self, "API错误", error_msg)
                         continue
-                if self.radio_add.isChecked():
+                if self.radio_add.isChecked():  # 选择新建对象
                     group_name_entry = self.group_entry.text().strip()
                     if not group_name_entry:
                         QMessageBox.critical(self, "未输入策略组", "请输入策略组")
